@@ -2,6 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<?php
+# CREACIO DEL MENU AMB TOTES LES OPCIONS A GESTIONAR
+		$ruta="../../";
+		include_once $ruta."gestio/classes/cls_includes.php";	
+		$gen=new general($ruta);
+		
+?>
 
 <link href="<?=$ruta?>gestio/menu/stilsMenu.css" rel="stylesheet" type="text/css">
 <style>
@@ -20,8 +27,34 @@ body {
 }
 </style>
 <title>Documento sin t&iacute;tulo</title>
+<script language="javascript">
+		function reloadMenu() {
+			parent.menuEsq.location.reload();
+		}
+	</script>
+<!-- Fitxers javascript necessaris per generar el menu -->
+<script language="JavaScript" src="<?=$ruta?>gestio/menu/tree/tree.js"></script>
+<script language="JavaScript" src="<?=$ruta?>gestio/menu/tree/tree_tpl.js"></script>
 </head>
+
 <body>
-Gesti�
+<script language="JavaScript">
+var TREE_ITEMS = [
+		['Menu Gestió ',null,
+			["Gestió d'Autors",null,
+						['Alta Nou Autor','<?=$ruta?>gestio/controladors/c_autor.php?accio=a'],
+						["Llistat d'Autors",'<?=$ruta?>gestio/controladors/c_autor.php?accio=l']
+				
+			]
+		]<!--Tanca menu gestio-->
+];
+</script>
+<script language="JavaScript">
+	<!--
+	new tree (TREE_ITEMS, tree_tpl);
+	//-->
+</script>
+<div id="reload"><input type="button" value="reload" onClick="javascript:reloadMenu();" class="inputText"></div>
+
 </body>
 </html>
