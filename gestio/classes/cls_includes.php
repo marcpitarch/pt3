@@ -1,8 +1,18 @@
 <?php
+include_once $ruta.'gestio/classes/cls_connexio.php;';
+include_once $ruta.'gestio/classes/cls.general.php;';
+include_once $ruta.'gestio/classes/cls_autor.php;';
+        
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
+
+
+
+
+
+
+
+
+
+
+?>
